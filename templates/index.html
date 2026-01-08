@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How Much Grams - Dataset Capture</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <p class="app__eyebrow">Dataset Builder</p>
+        <h1>How Much Grams</h1>
+        <p class="app__subhead">Capture three photos per object: object, object on scale, and scale reading.</p>
+      </header>
+
+      <section class="card">
+        <div class="card__status">
+          <div>
+            <p class="status__label">Observation ID</p>
+            <p id="observation-id" class="status__value">Not started</p>
+          </div>
+          <div>
+            <p class="status__label">Step</p>
+            <p id="step-label" class="status__value">Ready</p>
+          </div>
+        </div>
+
+        <div class="camera">
+          <video id="video" autoplay playsinline></video>
+          <canvas id="canvas" class="hidden"></canvas>
+          <img id="preview" class="hidden" alt="Preview" />
+        </div>
+
+        <div class="instructions">
+          <p id="step-instructions">Allow camera access to begin.</p>
+        </div>
+
+        <div class="controls">
+          <button id="capture" class="btn btn--primary" disabled>Capture photo</button>
+          <button id="save" class="btn hidden">Save & continue</button>
+          <button id="retake" class="btn btn--ghost hidden">Retake</button>
+          <button id="new" class="btn btn--primary hidden">Start next observation</button>
+          <button id="cancel" class="btn btn--danger" disabled>Cancel observation</button>
+        </div>
+
+        <div class="progress">
+          <div class="progress__bar" id="progress-bar"></div>
+        </div>
+
+        <div id="message" class="message"></div>
+      </section>
+
+      <section class="card card--secondary">
+        <h2>Tips</h2>
+        <ul>
+          <li>Fill the frame with the object or scale for best results.</li>
+          <li>Use steady lighting to keep the scale reading sharp.</li>
+          <li>Press “Retake” if the framing is off.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
